@@ -1,0 +1,1012 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap');
+/*#region Body*/
+body {
+        font-family: 'Nunito Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color:  #f5f4f2;
+}
+main{
+    background-color:  #f5f4f2;
+    margin-top: 11em;
+}
+
+/*#endregion */
+
+/*#region  Menu/Nav/Dropdown*/
+/* Estilos para pantallas grandes */
+
+#navbar {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #fff; /* Cambia el color de fondo según tu diseño */
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2); /* Agrega sombra si lo deseas */
+    transition: top 0.3s ease-in-out; /* Agrega una transición suave para el efecto de ocultar y mostrar */
+}
+
+
+#navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.container-nav {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    height: 10em; /* 220px en em */
+    border: 1px solid #2121211e;
+    white-space: nowrap;
+    background-color: #fff;
+}
+
+
+.logotip-searcher{
+    display: flex;
+}
+
+.logo {
+    margin-left: 0.265625em; /* 5.300000000000001rem en em */
+    margin-top: 0.08125em; /* 1.3000000000000007rem en em */
+    width: 150px; /* Establece el ancho de la imagen a 200 píxeles */
+    height: 150px; /* Establece el alto de la imagen a 150 píxeles */
+    padding: 1em;
+}
+
+.logotip {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 0.08125em; /* 0.3000000000000007rem en em */
+    margin-left: 4em;
+    white-space: nowrap;
+}
+
+.logotip-text {
+    margin-left: 0.03125em; /* 0.5rem en em */
+    font-family: 'Marcellus', serif;
+    padding: 1.5em;
+    color: #000;
+    border-left: 1px solid  #2121211e;
+}
+
+.logotip p {
+    font-size: 1.5em; /* 24px en em */
+    margin-top: 0;
+    margin-bottom: 0; 
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 0.125em 0.25em; /* 2px 4px en em */
+}
+
+
+
+.nav, .menu, ul {
+    list-style: none;
+    margin: 0;
+    margin-right: 3em;
+    padding: 0;
+    display: flex;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.4375em; /* 23px en em */
+    padding: 0.625em 0.9375em; /* 10px 15px en em */
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1.2;
+    position: relative; /* Para que los pseudoelementos sean relativos a este elemento */
+}
+
+.nav a::before,
+.nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #cb2d19; /* Color de la línea roja */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav a::before {
+    right: 50%;
+}
+
+.nav a::after {
+    left: 50%;
+}
+
+.nav a:hover::before,
+.nav a:hover::after {
+    width: 100%; /* Hacer que la línea ocupe todo el ancho */
+}
+
+/*Dropdown*/
+
+
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 1509px) {
+    .nav .menu ul {
+        list-style: none;
+        margin: 0;
+        margin-right: 0;
+        padding: 0;
+        display: flex;
+    }
+
+}
+
+@media screen and (max-width: 1140px) { 
+    .container-nav {
+        flex-direction: column;
+        height: auto;
+        padding: 1.25em; /* 20px en em */
+    }
+    
+    .logo {
+        margin: auto;
+    }
+
+    .logotip-text {
+        margin-bottom: 1.25em; /* 20px en em */
+    }
+
+    .logotip {
+        display: flex;
+        text-align: center;
+        margin-bottom: 0.625em; /* 10px en em */
+        margin: auto;
+        margin-right: auto;
+    }
+
+    .logotip-searcher{
+        display: block;
+    }
+
+    .nav {
+        margin-top: 0.625em; /* 10px en em */
+    }
+
+    .nav a {
+        font-size: 1.4em; /* 18px en em */
+    }
+
+    .nav, .menu, ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+}
+
+/*#endregion */
+
+/*#region Searcher*/
+
+.container-searcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 26px;
+    max-width: 400px; /* Cambia este valor según tu necesidad */
+}
+.search-box{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+
+.input-search{
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: #a82515;
+    right: 0;
+    padding-right: 40px;
+    color:#000000;
+    box-sizing: border-box;
+}
+
+.input-search::placeholder{
+    color:#000000;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+
+}
+.btn-search{
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    color:#000000;
+    background-color:transparent;
+    pointer-events: painted;  
+    box-sizing: border-box;
+}
+
+.btn-search:focus ~ .input-search{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+.input-search:focus{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 60);
+    
+}
+
+
+/*#endregion */
+
+/*#region Status-container*/
+#status-container{
+    display: block;
+}
+
+.status-container{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border: 1px solid #2121211e;
+    background-color: #fff;
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.75s ease;
+}
+
+.status-container:hover{
+    border-color:#c12a16; /* Cambia el color del borde a rojo cuando se hace hover */
+    border-width: 2.75px;
+}
+
+.search-status {
+    display: block;
+    flex: 1;
+    margin-left: none;
+    margin-right: 3em;
+    font-size: 26px;
+    word-wrap: break-word;
+}
+
+
+.sort-container label{
+    margin-right: 0.25em;
+}
+
+#order-select{
+    padding: 0.5em;
+    border-radius: 5em;
+    font-family: 'Nunito Sans', sans-serif;
+    cursor: pointer;
+}
+
+
+.view-container{
+    margin-left: 1em;
+}
+#view-select{
+    padding: 0.5em;
+    border-radius: 5em;
+    font-family: 'Nunito Sans', sans-serif;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1261px) {
+    .status-container{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            flex-direction: column-reverse;
+            padding: 1em;
+            min-width: 300px;
+
+    }
+
+    .search-status {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin-right: 0;
+            margin-top: 0.25em;
+        }
+    .sort-container, .view-container{
+        margin-bottom: 0.5em;
+    }
+}
+
+/*#endregion */
+
+/*#region Section*/
+
+section {
+    display: flex; 
+    justify-content: center;
+    margin-right: 15em;
+    margin-left: 15em;
+}
+
+
+#filters-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-width: 350px;
+    align-content: flex-start;
+    flex-direction: column;
+    padding: 0.25em; 
+}
+
+#filters-container ul{
+    margin: 1em;
+}
+
+#department-list, #highLights-list, #mediums-list {
+    list-style: none;
+    font-weight: bold;
+    margin: 5px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+
+.checkbox {
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    border: 1px solid #000;
+    margin-right: 10px;
+    /* Estilos adicionales para la casilla */
+}
+
+
+#century-list li:nth-child(n+6) {
+    display: none;
+}
+
+#mediums-list .department-link {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+
+#highLights-list .department-link {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+
+#department-list .department-link {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+
+#department-list .checkbox {
+    margin-right: 10px; /* Espacio entre el checkbox y el texto */
+}
+
+.department-link .filter-results {
+    margin-left: auto; /* Mueve el elemento hacia el margen derecho del contenedor */
+}
+
+
+.highLights {
+    border-top: 1px solid #2121211e;
+    border-left: 1px solid #2121211e;
+    border-right: 1px solid #2121211e;
+    border-bottom: 1px solid #bfbfbf3e;
+    background-color: #fff;
+}
+.mediums {
+    border-left: 1px solid #2121211e;
+    border-right: 1px solid #2121211e;
+    background-color: #fff;
+}
+
+.department-container{
+    border-top: 1px solid #2121211e;
+    border-left: 1px solid #2121211e;
+    border-right: 1px solid #2121211e;
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+}
+
+.department-name {
+    max-width: 200px; /* Define el ancho máximo para el texto */
+    overflow-wrap: break-word; /* Permite que el texto se divida en palabras */
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+#highLights-list a {
+    margin-bottom: 10px;
+}
+
+.filter-results {
+    color: #000;
+}
+.show-allCategories {
+    display: flex;
+    justify-content: center;
+}
+
+/*#endregion */
+
+/*#region Carousel*/
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#gallery-section{
+    display: block;
+    padding-top: 1em;
+    margin-bottom: 6em;
+}
+
+
+
+.flickity-viewport img{
+        width: 98%; /* La imagen ocupará el 100% del ancho del contenedor */
+        height: 100%; /* La altura ocupará el 100% del contenedor */
+        object-fit: cover; /* La imagen se ajustará para cubrir el contenedor sin recortarla */
+        margin-top: 10px; /* Ajusta el margen superior según tus necesidades */
+}
+
+.gallery {
+    background: #EEE;
+}
+
+.gallery-cell {
+    width: 66%;
+    height: 700px;
+    margin-right: 10px;
+    counter-increment: gallery-cell;
+}
+
+
+.gallery-cell:before {
+    display: block;
+    text-align: center;
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}
+.discoverGallery-text h3{
+    font-size: 3.25rem;
+    margin-bottom: 0.625rem;
+    line-height: 1.05;
+    font-weight: 700;
+}
+
+.discoverGallery-text h4{
+    font-size: 1.25rem;
+    margin-bottom: 0.625rem;
+    line-height: 1.05;
+    font-weight: 700;
+}
+
+.discoverGallery-text p{
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 1171px) {
+    .discoverGallery-text h3{
+        padding-left: 1em;
+    }
+    .discoverGallery-text h4{
+        padding-left: 3em;
+    }
+    .discoverGallery-text p{
+        padding-left: 2em;
+        margin-bottom: 1.5rem;
+    }
+    
+}
+
+/*#endregion */
+
+/*#region dataResults*/
+
+.details-container{
+    display: flex;
+
+}
+/* Estilos para cuando la vista es "row" */
+.results-container {
+    justify-content: flex-start;
+    column-count: 3;
+    column-gap: 5px;
+    width: calc(100% - 45px);
+    margin: 0 auto;
+    margin-right: 0;
+}
+
+.results-container a{
+    margin-top: 0;
+}
+
+.object {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%; 
+    padding: 0.25em; 
+    box-sizing: border-box; /* Incluye el espacio de relleno en el ancho total */
+    position: relative; /* Para posicionar correctamente el contenido adicional */  
+}
+
+.object h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.object h3[title] {
+    cursor: pointer;
+    
+}
+
+.object img {
+    max-width: 100%; /* La imagen no será más ancha que su contenedor */
+    height: auto; /* Mantendrá la proporción de la imagen */
+    opacity: 0; /* Establece la opacidad inicial en 0 para ocultar las imágenes */
+    transform: translateY(20px); /* Inicialmente, desplaza las imágenes hacia abajo (ajusta el valor según sea necesario) */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Agrega una transición suave de opacidad y transformación */
+}
+
+/* Nuevos estilos para el contenido adicional (nombre del artista y fecha) */
+.object .image-info {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    text-align: center;
+    opacity: 0; /* Invisible inicialmente */
+    transition: opacity 0.3s; /* Animación de transición suave */
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+}
+
+
+
+.object:hover .image-info {
+    display: block; /* Mostrar en hover */
+    opacity: 1; /* Hacer visible en hover */
+}
+
+/* Estilos CSS para las imágenes con efecto de fundido */
+.object .image-fade-in {
+    opacity: 0; /* Inicialmente, la imagen es invisible */
+    transition: opacity 0.5s ease-in-out; /* Transición suave de 0.5 segundos */
+}
+
+.object .image-fade-in.visible {
+    opacity: 1; 
+    border-radius: 0.5em;
+}
+
+
+@media screen and (max-width: 1800px) {
+    .results-container {
+        justify-content: flex-start;
+        column-count: 2; 
+        column-gap: 5px; 
+    }
+}
+
+@media screen and (max-width: 1470px) {
+    .results-container {
+        justify-content: flex-start;
+        column-count: 1; 
+        column-gap: 5px; 
+    }
+}
+
+@media screen and (max-width: 1266px) {
+    section {
+        display: flex;
+        flex-direction: column;
+        margin-right: 5em;
+        margin-left: 5em;
+    }
+    .results-container {
+        display: flex; 
+        flex-direction: column;
+        width: calc(100% - 86px); /* Asegura que ocupe todo el ancho disponible con margen */
+        margin: 0 auto; /* Centra el contenedor en la página */
+        margin-top: 2em;
+    }
+    
+}
+
+/*objectRow*/
+
+.objectRow {
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    position: relative;
+    box-sizing: border-box;
+    width: 50em;
+    height: 10em;
+    margin-bottom: 0.5em;
+    text-align: left; /* Alinia el texto a la izquierda */
+    background-color: #fff;
+    border: 1px solid #2121211e;
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transform: translateY(0px);
+    transition: opacity 1s ease 0s, transform 2s ease 0s;
+}
+
+.objectRow img {
+    width: 250px; /* Ancho deseado */
+    height: 250px; /* Alto deseado */
+    object-fit: cover; /* La imagen se ajustará manteniendo su relación de aspecto, recortando lo que no quepa */
+}
+
+.objectRow h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.objectRow h3[title] {
+    cursor: pointer;
+}
+
+.objectRow:hover {
+    border-color:#c12a16; /* Cambia el color del borde a rojo cuando se hace hover */
+    border-width: 2.75px;
+}
+
+.image-infoRow{
+    margin-left: 2em;
+    margin-bottom: 2em;
+    transform: translateY(0px);
+    transition: opacity 1s ease 0s, transform 2s ease 0s;
+}
+
+.image-infoRow h3{
+    margin-top: 2em;
+    margin-right: 1em;
+}
+
+
+/*Filter*/
+.checkbox input:checked {
+    background-color: '#c12a16'; /* Cambia el fondo del checkbox a rojo */
+}
+
+
+/*#endregion */
+
+/*#region objectDetails*/
+
+#object-details-container {
+    display: flex;
+}
+
+.object-image-container {
+    flex: 1;
+    padding: 5em;
+}
+
+.object-details-list {
+    padding-right: 5em;
+    padding-left: 2em;
+    padding-top: 4em;
+    box-sizing: border-box;
+    background-color: #fff;
+    max-width: 30em;
+    
+}
+
+.object-details img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.object-title {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.2;
+    word-wrap: break-word;
+}
+
+.object-artist .object-date .object-locations .object-context  {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.object-details-list a{
+    font-weight: bold;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+@media screen and (max-width: 1150px) {
+    #object-details-container {
+        display: block;
+        justify-content: center;
+    }
+    .object-image-container {
+        flex: 1;
+        padding: 20px;
+        box-sizing: border-box;
+        padding-top: 3em;
+    }
+    .object-details-list {
+        flex: 1;
+        padding: 20px;
+        box-sizing: border-box;
+        padding-right: 3em;
+        margin-left: 1.8em;
+        margin-bottom: 1em;
+    }
+    .object-title {
+        display: flex;
+        text-align: right;
+        justify-content: flex-end;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .container-searcher{
+        margin: 0;
+    }
+    main{
+        margin-top: 23em;
+    }
+}
+
+/*#endregion */
+
+/*#region AboutUs*/
+
+.aboutUs{
+    padding: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border: 1px solid #2121211e;
+    background-color: #fff;
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.75s ease; 
+}
+
+.aboutUs h3{
+    font-size: 2.25rem;
+    margin-bottom: 2.625rem;
+    line-height: 1.05;
+    font-weight: 700;
+}
+
+.aboutUs:hover {
+        border-color:#c12a16; /* Cambia el color del borde a rojo cuando se hace hover */
+        border-width: 2.75px;
+}
+
+.aboutUs p{
+    display: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.625rem;
+    line-height: 1.05;
+}
+
+/*#endregion */
+
+/*#region Pagination*/
+#prev-btn, #next-btn {
+    width: 100px; /* Ancho fijo para ambos botones */
+    background-color: #a82515; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none;
+    padding: 8px 0; /* Espaciado interior */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+#prev-btn:hover, #next-btn:hover {
+    background-color: #a8261565; /* Color de fondo al pasar el ratón */
+}
+
+.page-number.selected {
+    background-color: #a82515; /* Cambia el color de fondo según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    border-radius: 50%; /* Opcional: da un aspecto redondeado al número de página */
+}
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6em;
+}
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    flex-wrap: wrap;
+    margin-right: 0px;
+}
+
+
+.pagination a {
+    display: block;
+    width: 30px; /* Ancho de cada número de página */
+    height: 30px; /* Altura de cada número de página */
+    color: #000000; /* Color del texto */
+    text-align: center;
+    line-height: 30px; /* Alinea verticalmente el texto en el centro */
+    border-radius: 2px; /* Bordes redondeados */
+    text-decoration: none; /* Elimina la subrayado de los enlaces */
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+    margin-top: 0;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+.pagination a:hover {
+    background-color: #62646682; /* Color de fondo al pasar el ratón */
+}
+
+@media screen and (max-width: 1171px) {
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6em;
+        flex-direction: column;
+    }
+}
+/*#endregion */
+
+/*#region StarFavorites*/
+.fa-solid.fa-star{
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1; 
+    transform: translateY(0px);
+    transition: opacity 3s ease 0s, transform 2s ease 0s;
+    color: #0000003b;
+}
+
+.fa-solid.fa-star:hover{
+    color: #323131;
+    box-shadow: 0 0 10px #f4f3f0;
+    border-radius: 4em;
+}
+
+
+.fa-solid.fa-star.favorite {
+    color: #fee258;
+    box-shadow: 0 0 10px #f8e065;
+    border-radius: 4em;
+}
+
+#favorites-container span.fa-solid.fa-star{
+    position: absolute;
+    top: 38px;
+    right: 30px;
+    font-size: 28px;
+}
+
+/*#endregion */
+
+/*#region favoriteObjects*/
+
+#favorites-container{
+    display: flex;
+    flex-direction: column; /* Alinear verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; 
+}
+#favorites-container .object {
+    display: flex;
+    flex-direction: column; /* Alinear verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    width: 80%;
+    height: auto;
+}
+
+
+/*#endregion*/
+
+/*#region Footer*/
+.footer {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    padding: 1.25em;
+    background-color: #fff;
+}
+
+.footer a{
+    margin-top: 0;
+}
+
+
+.footParf {
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer p {
+    text-align: center; /* Opcional: centrar el texto dentro de cada párrafo */
+    margin: 3px 0; 
+}
+
+
+/*#endregion */
+
+

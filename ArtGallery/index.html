@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ArtGallery</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
+    <script src="./index.js" type="module" defer></script>
+    <script></script>
+</head>
+<body>
+    <header>
+        <div class="container-nav" id="navbar">
+            <div class="logotip-searcher">
+                <a href="index.html" class="logotip">
+                <img src="../logo/Logo3.png" alt="LogoArtGallery" class="logo">
+                    <div class="logotip-text">
+                        <p>Albert A. M.</p>
+                        <p style="font-weight: bold;">ArtGallery</p>
+                    </div>
+                </a>
+                <div class="container-searcher">
+                    <div class="search-box">
+                        <button class="btn-search"><i class="fas fa-search"></i></button>
+                        <input type="text" class="input-search" placeholder="Type to Search...">
+                    </div>            
+                </div>   
+            </div>    
+
+            <nav class="nav">
+                <ul class="menu">
+                    <li>
+                        <a href="#gallery-section">Discover the Gallery</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#aboutUs-section">About us</a>
+                    </li>
+                    <li class="favorites-section">
+                        <a href="./favorites/favorites.html">Favorites</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="gallery-section">
+            <div class="discoverGallery" >
+                <div class="discoverGallery-text">
+                    <h3>Discover the Gallery</h3>
+                    <h4>Temporary exhibition (October 2024)</h4>
+                    <p>"Explore the depths of artistic self-expression in this exhibition of self-portraits by iconic creators."</p>
+                </div>
+                <div class="gallery js-flickity" data-flickity-options="{ &quot;wrapAround&quot;: true }">
+                    <div class="gallery-cell" img src="./images/DG1.jpg" alt="Flowers">
+                        <a href="./objectdetails/object-details.html?id=436532">
+                            <img src="./images/DG1.jpg" alt="Flowers">
+                        </a>
+                    </div>
+                    <div class="gallery-cell">
+                        <a href="./objectdetails/object-details.html?id=437397">
+                            <img src="./images/DG2.jpg" alt="Flowers">
+                        </a>
+                    </div>
+                    <div class="gallery-cell">
+                        <a href="./objectdetails/object-details.html?id=437874">
+                            <img src="./images/DG3.jpg" alt="Flowers">
+                        </a>
+                    </div>
+                    <div class="gallery-cell">
+                        <a href="./objectdetails/object-details.html?id=334315">
+                            <img src="./images/DG4.jpg" alt="Flowers">
+                        </a>
+                    </div>
+                    <div class="gallery-cell">
+                        <a href="./objectdetails/object-details.html?id=437508">
+                            <img src="./images/DG5.jpg" alt="Flowers">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="status-container">
+            <div class="status-container">
+                <div class="search-status">"Waiting for results..."</div>
+                <div class="sort-container">
+                    <label for="order-select">Sort by:</label>
+                    <select id="order-select">
+                        <option value="original">Relevance (refresh the search)</option>
+                        <option value="dateDesc">Date descending</option>
+                        <option value="dateAsc">Date ascending</option>
+                        <option value="alphabet">Title (A-Z)</option>
+                    </select>
+                </div>
+                <div class="view-container">
+                    <label for="view-select">Display view:</label>
+                    <select id="view-select">
+                        <option value="columns">Columns</option>
+                        <option value="row">Row</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="filters-container">
+                <div class="highLights">
+                    <ul id="highLights-list">HIGHLIGHTS
+                        <li>
+                            <a href="?filter=Highlights" class="department-link" data-filter="Highlights">
+                                <div class="checkbox" style="background-color: #a82515;"></div>
+                                <span class="department-name">Highlights</span>
+                                <span class="filter-results">( ... )</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mediums">
+                    <ul id="mediums-list">PRIMARY MEDIUMS
+                        <li>
+                            <a href="?filter=Painting" class="department-link" data-filter="Oil on canvas">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Oil on canvas</span>
+                                <span class="filter-results">( ... )</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Watercolor" class="department-link" data-filter="Watercolor">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Watercolor</span>
+                                <span class="filter-results">( ... )</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Printmaking" class="department-link" data-filter="Printmaking">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Printmaking</span>
+                                <span class="filter-results">( ... )</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Paintings" class="department-link" data-filter="Paintings">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Paintings</span>
+                                <span class="filter-results">( ... )</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Paintings" class="department-link" data-filter="Ceramics">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Ceramics</span>
+                                <span class="filter-results">( ... )</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Textiles" class="department-link" data-filter="Textiles">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Textile</span>
+                                <span class="filter-results">( ... )</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="department-container">
+                    <ul id="department-list">DEPARTMENTS
+                        <li>
+                            <a href="?filter=American-Decorative-Arts" class="department-link" data-filter="American-Decorative-Arts">
+                                <div class="checkbox"></div>
+                                <span class="department-name">American Decorative Arts</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Ancient-Near-Eastern-Art" class="department-link" data-filter="Ancient-Near-Eastern-Art">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Ancient Near Eastern Art</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Arms-and-Armor" class="department-link" data-filter="Arms-and-Armor">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Arms and Armor</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Arts-of-Africa-Oceania-and-the-Americas" class="department-link" data-filter="Arts-of-Africa-Oceania-and-the-Americas">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Arts of Africa, Oceania, and the Americas</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Asian-Art" class="department-link" data-filter="Asian-Art">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Asian Art</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=The-Cloisters" class="department-link" data-filter="The-Cloisters">
+                                <div class="checkbox"></div>
+                                <span class="department-name">The Cloisters</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=The-Costume-Institute" class="department-link" data-filter="The-Costume-Institute">
+                                <div class="checkbox"></div>
+                                <span class="department-name">The Costume Institute</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Drawings-and-Prints" class="department-link" data-filter="Drawings-and-Prints">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Drawings and Prints</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Egyptian-Art" class="department-link" data-filter="Egyptian-Art">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Egyptian Art</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=European-Paintings" class="department-link" data-filter="European-Paintings">
+                                <div class="checkbox"></div>
+                                <span class="department-name">European Paintings</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=European-Sculpture-and-Decorative-Arts" class="department-link" data-filter="European-Sculpture-and-Decorative-Arts">
+                                <div class="checkbox"></div>
+                                <span class="department-name">European Sculpture and Decorative Arts</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Greek-and-Roman-Art" class="department-link" data-filter="Greek-and-Roman-Art">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Greek and Roman Art</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Islamic-Art" class="department-link" data-filter="Islamic-Art">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Islamic Art</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=The-Robert-Lehman-Collection" class="department-link" data-filter="The-Robert-Lehman-Collection">
+                                <div class="checkbox"></div>
+                                <span class="department-name">The Robert Lehman Collection</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=The-Libraries" class="department-link" data-filter="The-Libraries">
+                                <div class="checkbox"></div>
+                                <span class="department-name">The Libraries</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Medieval-Art" class="department-link" data-filter="Medieval-Art">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Medieval Art</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Musical-Instruments" class="department-link" data-filter="Musical-Instruments">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Musical Instruments</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Photographs" class="department-link" data-filter="Photograph">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Photograph</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?filter=Modern-Art" class="department-link" data-filter="Modern-Art">
+                                <div class="checkbox"></div>
+                                <span class="department-name">Modern Art</span>
+                                <span class="filter-results">( ... )</span> <!-- Reemplaza "XX" con el número real de resultados -->
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#" class="show-allCategories" style="margin-bottom: 1em;">View all categories</a>
+                </div>
+            </div> 
+
+
+
+            <div class="details-container">
+                <div id="results" class="results-container"></div>
+                <div id="object-details-container" class="object-details"></div> 
+            </div>
+        </section>
+        <section id="aboutUs-section">
+            <div class="aboutUs">
+                <h3>About Us</h3>
+                <p>Welcome to <strong>ArtGallery</strong>, your source for exploring a world of art. We are a passionate team of art enthusiasts dedicated to bringing you a curated collection of art masterpieces.</p>
+                <p>Our goal is to provide you with a seamless and immersive experience of exploring art from different eras and cultures. We believe in the power of art to inspire and enrich our lives.</p>
+                <p>ArtGallery is proud to be powered with <strong>The Met API</strong> , which allows us to showcase a diverse range of artworks from The Metropolitan Museum of Art in New York. Through this collaboration, we bring the treasures of The Met's collection to your fingertips.</p>
+                <p>Join us on this journey of artistic discovery, and let the beauty of art inspire you.</p>
+            </div>
+        </section>
+        
+        
+    </main>
+    <footer>
+        <div class="footer">
+            <a href="linkedin.com/in/albert-álvarez-mondelo-081621257">Albert Álvarez Mondelo  -  2023</a>
+            <div class="footParf">
+                <p>This page is powered by</p><a href="https://www.metmuseum.org/about-the-met/policies-and-documents/open-access">The Metropolitan Museum of Art Collection API</a> 
+                <p>All data and images are in the public domain and available for free use.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
