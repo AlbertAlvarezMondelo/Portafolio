@@ -1,4 +1,4 @@
 # Portafolio
 En este portafolio muestro los proyectos personales en los que estoy trabajando:
 
-ArtGallery: HTML, CSS, JavaScript
+1. ArtGallery: HTML, CSS, JavaScript
